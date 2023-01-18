@@ -1,0 +1,23 @@
+<div class="header">
+  <h3 class="para">Login</h3>
+</div>
+<div class="cards-container">
+  <div class="cards-form" >
+    <form class="form" (ngSubmit)="GetUser(UserLogin.email,UserLogin.password)" >
+      <!-- [formGroup]="Form" -->
+      <div class="form-group">
+        <label for="">Email</label>
+        <input type="email" name="Email" [(ngModel)]="UserLogin.email"  ng-required>
+        <!-- <small *ngIf="!Form.get('email').valid && Form.get('email').tuched">Please enter Email</small> -->
+      </div>
+      <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" name="Name" [(ngModel)]="UserLogin.password">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+        <a  (click)="gotoRegister()" class="newuser">NewUser?</a>
+      </div>
+    </form>
+  </div>
+</div>

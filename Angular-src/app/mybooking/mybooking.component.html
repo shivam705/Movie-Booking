@@ -1,0 +1,49 @@
+
+<div class ="content mb-0">
+  <div class ="row g-0" style="text-align: center; background-color: aqua;">
+    <div class="col-md-2 sidebar;">
+      <a href="">Home</a>
+
+      </div>
+      <div class="col-md-2 sidebar;">
+      <a (click)="myBooking()">My BooKing</a>
+
+      </div>
+      <div class="col-md-4 sidebar;">
+
+
+      </div>
+      <div class="col-md-2 sidebar;">
+        <a href="">HelloUser</a>
+
+      </div>
+      <div class="col-md-2 sidebar;">
+        <a (click)="logout()">Logout</a>
+
+      </div>
+  </div>
+</div>
+
+
+
+<div class="col-md-9 main-content">
+  <div class ="row g-0" *ngFor="let item of movieInfo " >
+      <div class="col-md-3 sidebar;" style="border: 1px solid;">
+        <img class="card-img-top" src="{{item.movieImage}}" alt="Card image cap">
+      </div>
+      <div class="col-md-6 sidebar;" style="border: 1px solid;">
+        <h1>{{item.movieName}}</h1>
+        <p>{{item.movieDescription}}</p>
+        Show Time:<p>{{item.movieDate | date:'shortDate'}}  {{item.movieTime | date:'shortTime'}}</p>
+      </div>
+      <div class="col-md-3 sidebar;" style="border: 1px solid;">
+        <div>
+          <ngb-rating [max]="5" [(rate)]="starRating"  [readonly]="false"></ngb-rating>
+          <!-- [(rate)]="rate" -->
+
+        </div>
+        <!-- <button class="btn btn-primary" (click)="gotoBook(item.id)">Book</button> -->
+      </div>
+</div>
+
+</div>

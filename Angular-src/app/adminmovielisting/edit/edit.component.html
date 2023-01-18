@@ -1,0 +1,70 @@
+
+<div class ="row g-0" style="text-align: center; background-color: aqua;">
+  <div class="col-md-2 sidebar;">
+  <a href="">List of Movies</a>
+
+  </div>
+  <div class="col-md-2 sidebar;">
+  <a href="">Add/Edit</a>
+
+  </div>
+  <div class="col-md-4 sidebar;">
+
+
+  </div>
+  <div class="col-md-2 sidebar;">
+
+    <a href="">Hello Admin</a>
+  </div>
+  <div class="col-md-2 sidebar;">
+   <a (click)="logout()">Logout</a>
+  </div>
+</div>
+
+<div>
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+  <div class ="row g-0">
+    <div class="col-md-6 sidebar;">
+     <form  class="form-group">
+       <div  class="col-md-5 sidebar;" >
+        <img class="card-img-top" src="{{moviedata.movieImage}}" alt="image" > <br>
+       </div>
+       <input type="text" placeholder="Image URL" name="movieImage" style="margin-left: 5%;" [(ngModel)]="moviedata.movieImage"> <input type="file" id="files" >
+     </form>
+    </div>
+
+    <div class="col-md-6 sidebar;">
+      Movie Name <input type="text" placeholder="Movie Name" style="width: 50%; margin: 25px; margin-top: 35px;" name="movieName" [(ngModel)]="moviedata.movieName"><br>
+      <label for="textarea">Movie Description</label><textarea placeholder="Type here" rows="5" cols="30" for="textarea" name="movieDescription" [(ngModel)]="moviedata.movieDescription"></textarea>
+    </div>
+  </div>
+
+  <div class ="row g-0" style="border: 1px solid; margin-top: 20px; min-height: 250px;">
+    <div class="col-md-12 sidebar;">
+    <table style="border: 1px solid;  text-align: center;">
+      <thead>
+        <td style="width: 15%;">Date</td>
+        <td style="width: 15%;">Time</td>
+        <td style="width: 15%;">Fare</td>
+        <td  style="width: 15%;"></td>
+      </thead>
+      <tbody>
+        <!-- *ngFor="let item of movieSlotbyMovieId" -->
+
+        <tr>
+        <td style="width: 15%;"><input type="date" id="appt-date" name="appi-date" [(ngModel)]="moviedata.movieDate" ></td>
+
+        <td><input  type="time"  name="input"value="13:30" [(ngModel)]="moviedata.movieTime"></td>
+        <td style="width: 15%;"><input type="number" name="number" [(ngModel)]="moviedata.fare"></td>
+        <td><a >Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+    <button class="btn btn-primary" style="margin-left: 3%;">Add Show</button>
+    <button type="submit" class="btn btn-primary" style="margin-left: 73%;">Save</button>
+</form>
+</div>
+
+

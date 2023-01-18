@@ -1,0 +1,28 @@
+.btn{
+  margin-top: 5%;
+  margin-left: 80%;
+  border-radius: 10pt;
+}
+
+.table{
+  margin-top: 2%;
+  margin-left: 15%;
+  align-content: center;
+  max-width: 70%;
+}
+
+.row{
+  text-align: center;
+  background-color: aqua;
+  height: 50px;
+}
+
+.col-md-2,.col-md-4{
+
+  height: 50px;
+  border: 1px solid;
+}
+
+.del{
+  margin-left: 26px;
+}

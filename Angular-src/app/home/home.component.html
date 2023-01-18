@@ -1,0 +1,72 @@
+
+<div class ="content mb-0">
+  <div class ="row g-0" style="text-align: center; background-color: aqua;">
+    <div class="col-md-2 sidebar;">
+      Home
+
+      </div>
+      <div class="col-md-2 sidebar;">
+      <a (click)="myBooking()">My BooKing</a>
+
+      </div>
+      <div class="col-md-4 sidebar;">
+
+
+      </div>
+      <div class="col-md-2 sidebar;">
+        {{username}}
+
+      </div>
+      <div class="col-md-2 sidebar;">
+        <a (click)="logout()">Logout</a>
+
+      </div>
+  </div>
+</div>
+
+<div class ="content mb-0">
+  <div class ="row g-0">
+    <div class="col-md-3 sidebar;" style="border: 1px solid;">
+      <div style="margin-top: 2%;">
+        Movie Name:<br>
+        <input type="search" class="form-control" name="moviename" [(ngModel)]="movieName" (ngModelChange)="Search()" style="border-radius: 10px;">
+      </div>
+      <div style="margin-top: 4%;">
+        From Date: <br>
+        <input type="date" style="border-radius: 5px;">
+      </div>
+      <div style="margin-top: 6%;">
+        To Date: <br>
+        <input type="date" style="border-radius: 5px;">
+      </div>
+      <div style="margin-top: 7%;">
+        <button type="submit" class="btn btn-primary" style="border-radius: 13px;" >Search</button>
+      </div>
+    </div>
+
+
+    <div class="col-md-9 main-content">
+      <div class ="row g-0" *ngFor="let item of movieInfo | paginate: { itemsPerPage: 3, currentPage: page}" >
+          <div class="col-md-3 sidebar;" style="border: 1px solid;">
+            <img class="card-img-top" src="{{item.movieImage}}" alt="Card image cap">
+          </div>
+          <div class="col-md-6 sidebar;" >
+            <h1>{{item.movieName}}</h1>
+            <p>{{item.movieDescription}}</p>
+          </div>
+          <div class="col-md-3 sidebar;">
+            <div>
+              <ngb-rating [max]="5" [(rate)]="movieRating"  [readonly]="false"></ngb-rating>
+              ({{item.fare}})
+
+
+            </div>
+            <button class="btn btn-primary" (click)="gotoBook(item.id)">Book</button>
+          </div>
+    </div>
+
+  </div>
+  <pagination-controls (pageChange)="page = $event" class="pagination"></pagination-controls>
+</div>
+
+

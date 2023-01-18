@@ -1,0 +1,24 @@
+
+.row{
+  border: 1px solid;
+  margin: 2px;
+}
+
+.col-md-2,.col-md-4{
+  text-align: center;
+  height: 50px;
+  border: 1px solid;
+}
+
+.del{
+  margin-left: 26px;
+}
+
+.col-md-9{
+  min-height: 500px;
+
+}
+
+.pagination{
+  margin-left: 30%;
+}

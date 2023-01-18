@@ -1,0 +1,50 @@
+<div class ="content mb-0">
+  <div class ="row g-0">
+    <div class="col-md-2 sidebar;">
+    <a (click)="gotohome()">List of Movies</a>
+
+    </div>
+    <div class="col-md-2 sidebar;">
+    <a (click)="addrecord()">Add/Edit</a>
+
+    </div>
+    <div class="col-md-4 sidebar;">
+
+
+    </div>
+    <div class="col-md-2 sidebar;">
+
+      <p>{{username}}</p>
+    </div>
+    <div class="col-md-2 sidebar;">
+     <a (click)="logout()">Logout</a>
+    </div>
+  </div>
+</div>
+
+<div class="list">
+  <div><button class="btn btn-primary" (click)="addrecord()">Add Record</button></div>
+  <br>
+  <table class="table table-striped" border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of movieInfo">
+        <td>
+          {{item.movieName}}
+        </td>
+
+        <td>
+          <a (click)="populateFrom(item,item.id)" >Edit  </a>
+          <a (click)="ondelete(item.id)" class="del">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+
+<router-outlet></router-outlet>

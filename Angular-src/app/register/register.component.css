@@ -1,0 +1,21 @@
+.header{
+  background-color: skyblue;
+  padding: 15px;
+  text-align: center;
+}
+
+.btn{
+  border-radius: 13px;
+  margin: 8px;
+
+}
+label{
+  margin: 13px;
+}
+
+.tablee{
+  margin-top: 5%;
+  margin-left: 35%;
+  text-align: center;
+}
+

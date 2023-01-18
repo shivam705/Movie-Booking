@@ -1,0 +1,68 @@
+<div class ="content mb-0">
+  <div class ="row g-0" style="text-align: center; background-color: aqua; ">
+    <div class="col-md-2 sidebar;">
+    <a href="">Home</a>
+
+    </div>
+    <div class="col-md-2 sidebar;">
+    <a href="">My BooKing</a>
+
+    </div>
+    <div class="col-md-4 sidebar;">
+
+
+    </div>
+    <div class="col-md-2 sidebar;">
+      <a href="">Shubham</a>
+
+    </div>
+    <div class="col-md-2 sidebar;">
+      <a (click)="logout()">Logout</a>
+
+    </div>
+  </div>
+</div>
+
+
+<div class ="content mb-0" style="margin-top:12%; margin-left:17%">
+  <div class ="row g-0">
+    <div class="col-md-3 sidebar;" >
+      <img class="card-img-top" src="{{moviedata.movieImage}}" alt="Card image cap">
+    </div>
+
+
+    <div class="col-md-6 main-content">
+      <div class ="row g-0">
+        <form  #form="ngForm" (ngSubmit)="onSubmit()">
+         <div class="col-md-12 sidebar;" >
+            <h1>{{moviedata.movieName}}</h1>
+            <p>{{moviedata.movieDescription}} <br>MultiLie Text......</p>
+            <div class ="row g-0">
+              <div class="col-md-6 sidebar;" >
+                ShoW time:{{moviedata.movieTime| date:'shortTime'}} <br><br>
+                <label for="cars">No Of Tickets:</label>
+                <select name="noOfTickets" id="cars" >
+                <option value=1 name="noOfTickets"  [(ngModel)]="userMovieBook.noOfTickets">1</option>
+                <option value=2 name="noOfTickets"  [(ngModel)]="userMovieBook.noOfTickets">2</option>
+                <option value=3 name="noOfTickets"  [(ngModel)]="userMovieBook.noOfTickets">3</option>
+                <option value=4 name="noOfTickets"  [(ngModel)]="userMovieBook.noOfTickets">4</option>
+                <option value=5 name="noOfTickets"  [(ngModel)]="userMovieBook.noOfTickets">5</option>
+                <option value=6 name="noOfTickets"  [(ngModel)]="userMovieBook.noOfTickets">6</option>
+                <option value=7 name="noOfTickets"  [(ngModel)]="userMovieBook.noOfTickets">7</option>
+                <option value=8 name="noOfTickets"  [(ngModel)]="userMovieBook.noOfTickets">8</option>
+                <option value=9 name="noOfTickets"  [(ngModel)]="userMovieBook.noOfTickets">9</option>
+                <option value=10 name="noOfTickets" [(ngModel)]="userMovieBook.noOfTickets">10</option>
+                </select>
+
+              </div>
+              <div class="col-md-6 sidebar;" >
+                Seats left:{{moviedata.availableSeats}} <br><br>
+                <button class="btn btn-primary" type="submit">Book</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
